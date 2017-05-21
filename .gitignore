@@ -1,0 +1,19 @@
+#--------------juce start
+#builds folder
+/CentralControlUnit/Software/CentralControlUnitSoftware/Builds
+#auto generated JuceLibraryCode folder
+/CentralControlUnit/Software/CentralControlUnitSoftware/JuceLibraryCode
+#--------------juce end
+
+#--------------ccs start
+**/Debug
+**/Release
+.xdchelp
+**/.config
+**/.lauches
+#--------------ccs end
+
+#--------------file system data start
+.DS_Store
+#--------------file system data end
+ 	
