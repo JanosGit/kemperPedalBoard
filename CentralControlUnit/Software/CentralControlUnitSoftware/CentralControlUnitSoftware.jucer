@@ -5,6 +5,10 @@
               version="1.0.0" bundleIdentifier="com.yourcompany.CentralControlUnitSoftware"
               includeBinaryInAppConfig="1" jucerVersion="5.0.1">
   <MAINGROUP id="ftZLXE" name="CentralControlUnitSoftware">
+    <GROUP id="{6F8682A0-6571-5FDB-F662-2B32ECCB92F4}" name="Graphics">
+      <FILE id="UnFJeF" name="CentralControlUnitFrontPanel.svg" compile="0"
+            resource="1" file="/Volumes/Daten/Benutzerordner/Entwicklung/kemperPedalBoard/CentralControlUnit/Hardware/FrontPanel/CentralControlUnitFrontPanel.svg"/>
+    </GROUP>
     <GROUP id="{88B76881-71E2-A39E-0F35-AB832BB0BA4B}" name="Source">
       <FILE id="FNM37R" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>

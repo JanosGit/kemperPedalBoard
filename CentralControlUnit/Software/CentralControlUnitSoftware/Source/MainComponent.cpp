@@ -19,8 +19,18 @@ public:
     //==============================================================================
     MainContentComponent()
     {
-        setSize (800, 600);
+        setSize (750, 420);
         setFramesPerSecond (60);
+        
+        addAndMakeVisible(rig1Button);
+        addAndMakeVisible(rig2Button);
+        addAndMakeVisible(rig3Button);
+        addAndMakeVisible(rig4Button);
+        addAndMakeVisible(rig5Button);
+        addAndMakeVisible(performanceUpButton);
+        addAndMakeVisible(performanceDownButton);
+
+        
     }
 
     ~MainContentComponent()
@@ -37,8 +47,11 @@ public:
     {
         // (Our component is opaque, so we must completely fill the background with a solid colour)
         g.fillAll (getLookAndFeel().findColour (ResizableWindow::backgroundColourId));
+        
+        Rectangle<float> windowArea (0, 0, getWidth(), getHeight());
+        
 
-        // You can add your drawing code here!
+        frontPanel->drawWithin(g, windowArea, RectanglePlacement::centred, 1.0);
     }
 
     void resized() override
@@ -46,14 +59,25 @@ public:
         // This is called when the MainContentComponent is resized.
         // If you add any child components, this is where you should
         // update their positions.
+        
+        rig1Button.setBoundsRelative(0.046, 0.88, 0.03, 0.051);
+        rig2Button.setBoundsRelative(0.192, 0.88, 0.03, 0.051);
+        rig3Button.setBoundsRelative(0.338, 0.88, 0.03, 0.051);
+        rig4Button.setBoundsRelative(0.484, 0.88, 0.03, 0.051);
+        rig5Button.setBoundsRelative(0.63, 0.88, 0.03, 0.051);
+        performanceUpButton.setBoundsRelative(0.776, 0.88, 0.03, 0.051);
+        performanceDownButton.setBoundsRelative(0.922, 0.88, 0.03, 0.051);
     }
 
 
 private:
     //==============================================================================
 
-    // Your private member variables go here...
-
+    // This is needed for the virtual front panel while developing
+    ScopedPointer<Drawable> frontPanel = Drawable::createFromImageData(BinaryData::CentralControlUnitFrontPanel_svg, BinaryData::CentralControlUnitFrontPanel_svgSize);
+    
+    TextButton rig1Button, rig2Button, rig3Button, rig4Button, rig5Button, performanceUpButton, performanceDownButton;
+    
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainContentComponent)

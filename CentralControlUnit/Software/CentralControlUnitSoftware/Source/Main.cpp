@@ -69,6 +69,9 @@ public:
             setUsingNativeTitleBar (true);
             setContentOwned (createMainContentComponent(), true);
             setResizable (true, true);
+            constrainer = new ComponentBoundsConstrainer();
+            constrainer->setFixedAspectRatio(1.7);
+            setConstrainer(constrainer);
 
             centreWithSize (getWidth(), getHeight());
             setVisible (true);
@@ -90,11 +93,14 @@ public:
         */
 
     private:
+        ScopedPointer<ComponentBoundsConstrainer> constrainer;
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainWindow)
+        
     };
 
 private:
     ScopedPointer<MainWindow> mainWindow;
+    
 };
 
 //==============================================================================
