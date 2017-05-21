@@ -1,0 +1,3 @@
+[submodule "CentralControlUnit/Software/CentralControlUnitSoftware/Libraries/Submodules/JUCE"]
+	path = CentralControlUnit/Software/CentralControlUnitSoftware/Libraries/Submodules/JUCE
+	url = https://github.com/WeAreROLI/JUCE.git
